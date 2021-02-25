@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
+        Title="MainWindow" Height="700" Width="900">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Content="Операции" Click="Button_Click"></Button>
+        <Button Grid.Column="1" Content="Данные" Click="Button_Click_1"></Button>
+        <local:OperationTable x:Name="OT" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" IsEnabled="True" Visibility="Visible"></local:OperationTable>
+        <local:DataTable x:Name="DT" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" IsEnabled="False" Visibility="Hidden"></local:DataTable>
     </Grid>
 </Window>

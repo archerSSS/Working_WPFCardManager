@@ -23,6 +23,29 @@ namespace CardManager
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ViewModel();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (OT.Visibility == Visibility.Hidden)
+            {
+                DT.IsEnabled = false;
+                DT.Visibility = Visibility.Hidden;
+                OT.IsEnabled = true;
+                OT.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (DT.Visibility == Visibility.Hidden)
+            {
+                OT.IsEnabled = false;
+                OT.Visibility = Visibility.Hidden;
+                DT.IsEnabled = true;
+                DT.Visibility = Visibility.Visible;
+            }
         }
     }
 }

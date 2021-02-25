@@ -24,5 +24,25 @@ namespace CardManager
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string name = TextEmployer.Text;
+            if (name != "")
+            {
+                ViewModel VM = (ViewModel)DataContext;
+                VM.AddEmployer(name);
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            string card = TextCard.Text;
+            if (card != "")
+            {
+                ViewModel VM = (ViewModel)DataContext;
+                VM.AddCardType(card);
+            }
+        }
     }
 }
