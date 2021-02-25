@@ -41,7 +41,7 @@ namespace CardManager
 
         public void AddOperation(DateTime? date, object e, object c, decimal price, int count)
         {
-            Operation o = new Operation() { Date = date, Name = (string)e, CardType = (string)c, Price = price, Count = count };
+            Operation o = new Operation() { Date = date.Value, Name = (string)e, CardType = (string)c, Price = price, Count = count };
             Operations.Add(o);
             saver.SaveOperations(Operations);
         }
